@@ -1,16 +1,26 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const { user, logout } = useAuth();
+  const navigate = useNavigate();
+
+  function handleSignOut(e: React.MouseEvent) {
+    e.preventDefault();
+    logout();
+    navigate("/", { replace: true });
+  }
 
   return (
     <div className="app-shell">
       <aside className="sidebar">
-        <div className="brand">
+        <Link to="/" className="brand" style={{ textDecoration: "none" }}>
           People<span>Reach</span>
-        </div>
+        </Link>
+        <NavLink to="/" end className={({ isActive }) => `nav-link${isActive ? " active" : ""}`}>
+          Home
+        </NavLink>
         <NavLink to="/dashboard" end className={({ isActive }) => `nav-link${isActive ? " active" : ""}`}>
           Dashboard
         </NavLink>
@@ -34,7 +44,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <span>
               Signed in as <strong>{user?.username}</strong>
             </span>
-            <a href="#" onClick={(e) => { e.preventDefault(); logout(); }}>
+            <a href="#" onClick={handleSignOut}>
               Sign out
             </a>
           </div>

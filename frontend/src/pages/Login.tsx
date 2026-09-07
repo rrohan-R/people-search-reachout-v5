@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
 export default function LoginPage() {
@@ -29,7 +29,10 @@ export default function LoginPage() {
   return (
     <div className="login-wrap">
       <div className="login-card">
-        <div className="page-title">Reachout</div>
+        <Link to="/" className="muted" style={{ fontSize: 13 }}>
+          ← Back to home
+        </Link>
+        <div className="page-title" style={{ marginTop: 8 }}>Reachout</div>
         <div className="page-subtitle">
           {mode === "login" ? "Sign in to your account" : "Create a new account"}
         </div>

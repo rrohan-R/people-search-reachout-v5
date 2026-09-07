@@ -103,6 +103,16 @@ def _ensure_default_admin():
         db.close()
 
 
+@app.get("/")
+def root():
+    return {
+        "name": "Outreach API",
+        "status": "ok",
+        "docs": "/docs",
+        "health": "/api/health",
+    }
+
+
 @app.get("/api/health")
 def health():
     return {"status": "ok"}
