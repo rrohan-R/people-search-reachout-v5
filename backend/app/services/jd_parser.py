@@ -1,12 +1,4 @@
-"""
-Lightweight, dependency-free job-description parser.
 
-It extracts a best-effort set of search criteria (skills/keywords, locations,
-seniority, company hint) from free-text job descriptions using keyword
-matching and simple heuristics. This is intentionally rule-based (no external
-LLM call) so the app works fully offline / without extra API keys. Users can
-always edit the extracted criteria in the UI before running a people search.
-"""
 import re
 from typing import List, Optional, Tuple
 

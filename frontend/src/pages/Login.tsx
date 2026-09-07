@@ -29,7 +29,7 @@ export default function LoginPage() {
   return (
     <div className="login-wrap">
       <div className="login-card">
-        <div className="page-title">People Search &amp; Reachout</div>
+        <div className="page-title">Reachout</div>
         <div className="page-subtitle">
           {mode === "login" ? "Sign in to your account" : "Create a new account"}
         </div>
