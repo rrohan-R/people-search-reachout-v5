@@ -16,7 +16,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <div className="app-shell">
       <aside className="sidebar">
         <Link to="/" className="brand" style={{ textDecoration: "none" }}>
-          People<span>Reach</span>
+          Reach<span>out</span>
         </Link>
         <NavLink to="/" end className={({ isActive }) => `nav-link${isActive ? " active" : ""}`}>
           Home

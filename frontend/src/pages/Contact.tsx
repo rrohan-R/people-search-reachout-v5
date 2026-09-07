@@ -19,7 +19,7 @@ export default function ContactPage() {
     <div className="public-page">
       <header className="public-header">
         <Link to="/" className="brand">
-          People<span>Reach</span>
+          Reach<span>out</span>
         </Link>
         <nav className="public-nav">
           <Link to="/faq">FAQ</Link>

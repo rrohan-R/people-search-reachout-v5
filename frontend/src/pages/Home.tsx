@@ -9,7 +9,7 @@ export default function HomePage() {
     <div className="public-page">
       <header className="public-header">
         <div className="brand">
-          People<span>Reach</span>
+          Reach<span>out</span>
         </div>
         <nav className="public-nav">
           <Link to="/faq">FAQ</Link>
